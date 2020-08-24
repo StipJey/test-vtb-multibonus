@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.breadcrumbs {
+    font-family: 'Roboto', Arial, sans-serif;
+    white-space: nowrap;
+    padding-right: 200px;
+}
+
+.breadcrumbs__breadcrumb {
+    color: #797979;
+    text-decoration: none;
+}
+
+.breadcrumbs__breadcrumb:hover {
+    color: #300fc6;
+}
+
+.breadcrumbs__breadcrumb--active {
+    font-weight: bold;
+}
+
+.breadcrumbs__separator {
+    color: #797979;
+    padding: 0 1rem;
+}
