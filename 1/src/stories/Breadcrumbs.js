@@ -6,6 +6,7 @@ import {throttle} from "./utils";
 import {Breadcrumb} from "./Breadcrumb";
 import {Separator} from "./Separator";
 
+const PADDING_RIGHT = 200;
 
 export class Breadcrumbs extends React.Component {
     constructor(props) {
@@ -32,7 +33,7 @@ export class Breadcrumbs extends React.Component {
             childWidth += n.offsetWidth;
         })
 
-        if (this.root.offsetWidth < childWidth + 200
+        if (this.root.offsetWidth < childWidth + PADDING_RIGHT
             && (this.state.content.length > 3 || (this.state.content.length > 2 && this.state.full))
         ) {
             const newContent = [...this.state.content];
@@ -57,11 +58,11 @@ export class Breadcrumbs extends React.Component {
             childWidth += n.offsetWidth;
         })
 
-        if (this.root.offsetWidth > childWidth + 200) {
+        if (this.root.offsetWidth > childWidth + PADDING_RIGHT) {
             const newContent = [...this.props.items];
             const deleteCount = this.props.items.length - this.state.content.length;
             if (deleteCount) {
-                newContent.splice(1, deleteCount,{title: '...'});
+                newContent.splice(1, deleteCount,{ title: '...' });
                 this.setState({
                     content: newContent,
                 })
